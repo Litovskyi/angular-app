@@ -1,0 +1,38 @@
+<div class="card mb-4">
+
+  <div class="img-fluid">
+    <div class="text-light">
+      <h5 class="card-title mt-4">{{post.title}}</h5>
+    </div>
+    <img class="card-img-top" src="{{post.img}}" alt="">
+
+  </div>
+
+
+  <div class="card-body">
+    <h6 class="card-subtitle mb-2 text-secondary"><i class="fas fa-user"></i>&nbsp;{{post.name}}</h6>
+    <quill-view-html [content]="post.text"></quill-view-html>
+  </div>
+
+
+  <div class="card-footer d-flex justify-content-between bg-transparent">
+
+
+    <button type="button" [routerLink]="['/post', post.id]" class="btn btn-link text-dark">
+      Read more
+    </button>
+
+
+    <button type="button" id="like-button">
+      <svg class="heart-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+        <path
+          d="M91.6 13A28.7 28.7 0 0 0 51 13l-1 1-1-1A28.7 28.7 0 0 0 8.4 53.8l1 1L50 95.3l40.5-40.6 1-1a28.6 28.6 0 0 0 0-40.6z"/>
+      </svg>
+      Like
+    </button>
+
+  </div>
+
+</div>
+
+

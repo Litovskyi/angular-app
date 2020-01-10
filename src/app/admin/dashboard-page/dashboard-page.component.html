@@ -1,0 +1,29 @@
+<div class="container" *ngIf="posts.length; else loading">
+
+  <input class="mt-2 mb-2 form-control" type="text" [(ngModel)]="searchStr" placeholder="Search posts...">
+  <table class="table table-striped">
+    <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Author</th>
+      <th scope="col">Title</th>
+      <th scope="col">Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let post of posts | searchPosts:searchStr; let idx = index">
+      <td>{{idx + 1}}</td>
+      <td>{{post.name}}</td>
+      <td>{{post.title}}</td>
+      <td class="d-flex justify-content-start">
+        <button class="btn btn-link text-white bg-danger" (click)="remove(post.id)">Delete</button>
+        <a class="btn btn-link bg-secondary text-white ml-2 disabled">Edit</a></td>
+    </tr>
+
+    </tbody>
+  </table>
+</div>
+<app-alert></app-alert>
+<ng-template #loading>
+  <p class="text-lg-center">Loading...</p>
+</ng-template>

@@ -1,0 +1,60 @@
+<form [formGroup]="form" (ngSubmit)="submit()">
+  <h1>Create new post</h1>
+
+  <div class="form-group mt-3" [ngClass]="{invalid: form.get('title').touched && form.get('title').invalid}">
+    <label for="title" class="text-secondary">Name of the post:</label>
+    <input [(ngModel)]="title" type="text" class="form-control" id="title" placeholder="Enter title"
+           formControlName="title">
+
+    <div class="validation" *ngIf="form.get('title').touched && form.get('title').invalid">
+
+
+      <small *ngIf="form.get('title').errors.required" id="emailHelp">Please enter
+        name of post</small>
+
+    </div>
+
+  </div>
+
+  <div class="form-group">
+    <label class="text-secondary">Content of the post:</label>
+    <quill-editor formControlName="text" [(ngModel)]="text"></quill-editor>
+  </div>
+  <div class="form-group">
+    <label class="text-secondary">Select main photo:</label><br>
+    <div class="bg-light">
+      <input type="file" formControlName="image" (change)="onFileSelected($event)" [(ngModel)]="image">
+      <img width="100%" [src]="image" *ngIf="image" class="mt-2">
+    </div>
+
+    <!--    <ng-select-->
+
+    <!--      bindLabel="name"-->
+    <!--      placeholder="Choose categories.."-->
+    <!--      appendTo="body"-->
+    <!--      multiple="false"-->
+    <!--    >-->
+
+    <!--    </ng-select>-->
+  </div>
+  <div class="form-group mt-3" [ngClass]="{invalid: form.get('name').touched && form.get('name').invalid}">
+    <label for="name" class="text-secondary">Author of the post:</label>
+    <input [(ngModel)]="name" type="text" class="form-control" id="name" placeholder="Enter author"
+           formControlName="name">
+    <div class="validation" *ngIf="form.get('name').touched && form.get('name').invalid">
+      <small *ngIf="form.get('name').errors.required">Please enter
+        author of the post</small>
+    </div>
+  </div>
+
+  <button type="submit" class="btn btn-block btn-dark" [disabled]="form.invalid">CREATE POST</button>
+
+</form>
+
+
+<!--  <div *ngIf="submit()" class="alert alert-success" id="alertSucces">-->
+<!--    <strong>Done!</strong> Post created-->
+<!--  </div>-->
+
+
+

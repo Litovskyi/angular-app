@@ -1,1 +1,209 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css?family=Slabo+27px&display=swap');
+@import "~quill/dist/quill.core.css";
+@import "~quill/dist/quill.snow.css";
+@import "~@ng-select/ng-select/themes/ant.design.theme.css";
+
+
+* {
+  font-family: 'Slabo 27px', serif;
+}
+
+
+body {
+
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  background: linear-gradient(45deg, #fafafa, #fafafa) !important;
+  -moz-osx-font-smoothing: grayscale;
+  font-smooth: always;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke: 1px transparent;
+  text-shadow: 0 0 1px rgba(0, 0, 0, 0.3);
+  font-size: 0.9em;
+  font-weight: 500;
+
+}
+
+quill-editor .ql-toolbar {
+  background-color: white;
+}
+
+quill-editor .ql-container {
+  height: 300px !important;
+  background-color: white;
+
+}
+
+
+.form-group {
+  &.invalid {
+
+    small {
+      color: #DC4D41;
+    }
+
+    input {
+      border-color: #DC4D41;
+    }
+
+  }
+
+
+}
+
+
+.dropdown {
+  width: 100%;
+}
+
+.padding {
+  padding-bottom: 1em;
+  font-size: 13px;
+
+}
+
+
+.navbar {
+
+  background: #ffffff;
+  font-size: 15px;
+  border-bottom: 1px solid #E1E1E1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.7rem 2rem;
+  z-index: 1;
+  width: 100%;
+  opacity: 0.9;
+  margin-bottom: 1rem;
+
+  .navbar-brand img {
+    width: 40px;
+
+  }
+
+  .navbar-brand {
+    font-size: 30px;
+    font-weight: 600;
+
+    .navbar-brand label {
+      font-size: 10px;
+    }
+
+  }
+
+  ul {
+    display: flex;
+
+    a {
+      text-decoration: none;
+      font-size: 17px;
+    }
+
+    a:hover {
+      color: #456896 !important;
+      cursor: pointer;
+    }
+  }
+
+
+}
+
+
+hr {
+
+  width: 95%;
+  background: #E1E1E1;
+  margin-top: 0.3em;
+  margin-bottom: 1em;
+}
+
+
+.pointer {
+  cursor: pointer;
+}
+
+
+.card img {
+
+  width: 100%;
+}
+
+#fountainTextG {
+  width: 234px;
+  margin: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+.fountainTextG {
+  color: rgb(0, 0, 0);
+  font-family: Arial;
+  font-size: 24px;
+  text-decoration: none;
+  font-weight: normal;
+  font-style: normal;
+  float: left;
+  animation-name: bounce_fountainTextG;
+  animation-duration: 1.271s;
+  animation-iteration-count: infinite;
+  animation-direction: normal;
+  transform: scale(.5);
+}
+
+#fountainTextG_1 {
+  animation-delay: 0.4525s;
+}
+
+#fountainTextG_2 {
+  animation-delay: 0.549s;
+}
+
+#fountainTextG_3 {
+  animation-delay: 0.6355s;
+}
+
+#fountainTextG_4 {
+  animation-delay: 0.732s;
+}
+
+#fountainTextG_5 {
+  animation-delay: 0.8185s;
+}
+
+#fountainTextG_6 {
+  animation-delay: 0.905s;
+}
+
+#fountainTextG_7 {
+  animation-delay: 1.0015s;
+}
+
+#fountainTextG_8 {
+  animation-delay: 1.088s;
+}
+
+#fountainTextG_9 {
+  animation-delay: 1.1845s;
+}
+
+#fountainTextG_10 {
+  animation-delay: 1.271s;
+}
+
+
+@keyframes bounce_fountainTextG {
+  0% {
+    transform: scale(1);
+    color: rgb(0, 0, 0);
+  }
+
+  100% {
+    transform: scale(1);
+    color: rgb(255, 255, 255);
+  }
+}
+
+

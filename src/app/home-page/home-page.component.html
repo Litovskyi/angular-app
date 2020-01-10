@@ -1,0 +1,106 @@
+<div class="container padding text-dark">
+  <div class="row alert text-center">
+    <div class="col-12">
+      <h1 class="display-4 font-weight-normal">Home</h1>
+    </div>
+
+  </div>
+  <hr>
+</div>
+
+<div class="row  d-flex justify-content-center m-5">
+
+
+  <div class="col-md-3 mb-4">
+
+    <input type="search" placeholder="Search post..." class="form-control border-0 bg-white mb-4"
+           [(ngModel)]="searchStr">
+
+
+    <app-categories></app-categories>
+
+  </div>
+
+
+  <div class="col-md-9">
+    <div class="card-header bg-transparent mb-4">
+      <h3>All Posts</h3>
+    </div>
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb bg-transparent">
+        <li class="breadcrumb-item"><a href="#">Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page">All posts</li>
+
+
+      </ol>
+    </nav>
+
+
+    <div class="row" *ngIf="posts$ | async as posts; else l">
+
+
+      <app-post
+        class="col-xl-6"
+        *ngFor="let p of posts | searchPosts: searchStr"
+        [post]="p"
+      ></app-post>
+
+    </div>
+    <ng-template #l>
+      <div id="fountainTextG">
+        <div id="fountainTextG_1" class="fountainTextG">L</div>
+        <div id="fountainTextG_2" class="fountainTextG">o</div>
+        <div id="fountainTextG_3" class="fountainTextG">a</div>
+        <div id="fountainTextG_4" class="fountainTextG">d</div>
+        <div id="fountainTextG_5" class="fountainTextG">i</div>
+        <div id="fountainTextG_6" class="fountainTextG">n</div>
+        <div id="fountainTextG_7" class="fountainTextG">g</div>
+        <div id="fountainTextG_8" class="fountainTextG">.</div>
+        <div id="fountainTextG_9" class="fountainTextG">.</div>
+        <div id="fountainTextG_10" class="fountainTextG">.</div>
+      </div>
+    </ng-template>
+  </div>
+
+  <app-alert></app-alert>
+  <div class="create-post">
+    <button class="offset" data-toggle="modal" data-placement="top" title="Create new post" data-target="#createModal">
+      <i class="fas fa-pencil-alt"></i>
+    </button>
+  </div>
+  <div *ngIf="postsService.errorMessage" class="alert alert-warning" id="alert">
+    <strong>Warning!</strong> {{postsService.errorMessage}}
+  </div>
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="createModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+       aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Create Post</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+
+        <div class="modal-body">
+          <app-create-page (onAdd)="postsService.updatePost($event)">
+          </app-create-page>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!--End Modal-->
+
+</div>
+
+
+

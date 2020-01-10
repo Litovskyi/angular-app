@@ -1,0 +1,14 @@
+<div class="alert-wrap" *ngIf="text">
+  <div
+    class="alert alert-success alert-dismissible fade show"
+    role="alert"
+    [ngClass]="{
+'alert-success': type === 'success',
+'alert-warning': type === 'warning',
+'alert-danger': type === 'danger'
+    }"
+  >
+    <strong>Done!</strong>
+    <p>{{text}}</p>
+  </div>
+</div>

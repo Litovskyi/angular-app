@@ -1,0 +1,79 @@
+.card {
+  transition: all 0.3s ease;
+  color: #000;
+  background: #fff;
+  margin-left: 20px;
+  margin-right: 20px;
+  border: none;
+  opacity: 1;
+  box-shadow: 0.15rem 0.15rem 0.125rem 0.15rem rgba(0, 0, 0, 0.06);
+
+
+  quill-view-html {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    line-height: 20px;
+    max-height: 60px;
+  }
+
+}
+
+.card img {
+  transition: .5s;
+}
+
+
+.card h5 {
+  position: absolute;
+  left: 0;
+  color: white;
+  letter-spacing: -1px;
+  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, .6);
+  padding: 10px;
+}
+
+
+$white: #FFF;
+$gray: #888;
+$red: indianred;
+
+#like-button {
+  color: $gray;
+  font-size: 1em;
+  background-color: transparent;
+
+  border: none;
+
+  line-height: 1.2em;
+
+  cursor: pointer;
+  transition: color 150ms ease-in-out, background-color 150ms ease-in-out, transform 150ms ease-in-out;
+  outline: 0;
+
+
+  &:hover {
+    color: $red;
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+
+  &.selected {
+    color: $white;
+    background-color: $red;
+
+  }
+
+  .heart-icon {
+    display: inline-block;
+    fill: currentColor;
+    width: 0.8em;
+    height: 0.8em;
+    margin-right: 0.2em;
+  }
+}
